@@ -15,7 +15,6 @@ public class Pessoa {
     private String cep;
     private String ddd;
     private String telefone;
-    private Pedido pedido; //Indicando a multiplicidade 1;
     
     public Pessoa(String cpf, String nome) {
         this.cpf = cpf;

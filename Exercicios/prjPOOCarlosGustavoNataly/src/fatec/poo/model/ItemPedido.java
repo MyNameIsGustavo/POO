@@ -16,10 +16,13 @@ public class ItemPedido {
         this.sequencia = sequencia;
         this.qtdeVendida = qtdeVendida;
         this.produto = produto;
+        
+        produto.setQtdeEstoque(produto.getQtdeEstoque() - qtdeVendida);
     }
     
     public void setQtdeVendida(double qtdeVendida) {
         this.qtdeVendida = qtdeVendida;
+        produto.setQtdeEstoque(produto.getQtdeEstoque() - this.getQtdeVendida());
     }
 
     public int getSequencia() {
@@ -28,5 +31,21 @@ public class ItemPedido {
 
     public double getQtdeVendida() {
         return qtdeVendida;
+    }
+
+    public Produto getProduto() {
+        return produto;
+    }
+
+    public void setProduto(Produto produto) {
+        this.produto = produto;
+    }
+
+    public Pedido getPedido() {
+        return pedido;
+    }
+
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
     }
 }
